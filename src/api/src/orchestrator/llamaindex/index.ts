@@ -143,7 +143,7 @@ export async function setupAgents(filteredTools: McpServerDefinition[] = []) {
   // Define the triage agent taht will determine the best course of action
 
   const travelAgent = agent({
-    name: "TriageAgent",
+    name: "TravelAgent",
     systemPrompt:
       "Acts as a triage agent to determine the best course of action for the user's query. If you cannot handle the query, please pass it to the next agent. If you can handle the query, please do so.",
     tools: [...toolsList],
