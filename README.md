@@ -70,6 +70,10 @@ The architecture of the AI Travel Agents application is designed to be modular a
 - Includes an [llms.txt](./llms.txt) file to provide information to help LLMs use this project at inference time ([learn more](https://llmstxt.org/))
 
 
+<!-- Note: this is a placeholder for HackerNoon links which point from the article to an old section in this readme -->
+<a id="prerequisites"/>
+<!--  -->
+
 ## Preview the application locally for FREE
 
 To run and preview the application locally, we will use [Docker Model Runner](https://docs.docker.com/ai/model-runner/).
