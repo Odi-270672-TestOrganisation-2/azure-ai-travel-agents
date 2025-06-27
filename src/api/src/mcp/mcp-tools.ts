@@ -1,15 +1,10 @@
 import type { SSEClientTransportOptions } from "@modelcontextprotocol/sdk/client/sse.js";
 import { MCPClient as MCPHTTPClient } from "./mcp-http-client.js";
 import { MCPClient as MCPSSEClient } from "./mcp-sse-client.js";
+import { MCPClientOptions} from "@llamaindex/tools";
 
-type MCPCommonOptions = {
-  toolNamePrefix?: string;
-  clientName?: string;
-  clientVersion?: string;
-  verbose?: boolean;
-};
 type LlamaIndexMCPClientOptions = SSEClientTransportOptions &
-  MCPCommonOptions & {
+  MCPClientOptions & {
     url: string;
     type: "sse" | "http";
     accessToken?: string;

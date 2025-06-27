@@ -20,7 +20,12 @@ export const McpToolsConfig = (): {
       url: process.env["MCP_ECHO_PING_URL"] + MCP_API_HTTP_PATH,
       type: "http",
       verbose: true,
-      accessToken: process.env["MCP_ECHO_PING_ACCESS_TOKEN"],
+      requestInit: {
+          headers: {
+              "Authorization": "Bearer " + process.env["MCP_ECHO_PING_ACCESS_TOKEN"],
+          }
+      },
+      useSSETransport: false
     },
     id: "echo-ping",
     name: "Echo Test",
@@ -30,6 +35,7 @@ export const McpToolsConfig = (): {
       url: process.env["MCP_CUSTOMER_QUERY_URL"] + MCP_API_SSE_PATH,
       type: "sse",
       verbose: true,
+      useSSETransport: true
     },
     id: "customer-query",
     name: "Customer Query",
@@ -39,6 +45,7 @@ export const McpToolsConfig = (): {
       url: process.env["MCP_WEB_SEARCH_URL"] + MCP_API_SSE_PATH,
       type: "sse",
       verbose: true,
+      useSSETransport: true
     },
     id: "web-search",
     name: "Web Search",
@@ -48,6 +55,7 @@ export const McpToolsConfig = (): {
       url: process.env["MCP_ITINERARY_PLANNING_URL"] + MCP_API_SSE_PATH,
       type: "sse",
       verbose: true,
+      useSSETransport: true
     },
     id: "itinerary-planning",
     name: "Itinerary Planning",
@@ -57,6 +65,7 @@ export const McpToolsConfig = (): {
       url: process.env["MCP_MODEL_INFERENCE_URL"] + MCP_API_SSE_PATH,
       type: "sse",
       verbose: true,
+      useSSETransport: true
     },
     id: "model-inference",
     name: "Model Inference",
@@ -66,6 +75,7 @@ export const McpToolsConfig = (): {
       url: process.env["MCP_CODE_EVALUATION_URL"] + MCP_API_SSE_PATH,
       type: "sse",
       verbose: true,
+      useSSETransport: true
     },
     id: "code-evaluation",
     name: "Code Evaluation",
@@ -75,6 +85,7 @@ export const McpToolsConfig = (): {
       url: process.env["MCP_DESTINATION_RECOMMENDATION_URL"] + MCP_API_SSE_PATH,
       type: "sse",
       verbose: true,
+      useSSETransport: true
     },
     id: "destination-recommendation",
     name: "Destination Recommendation",
