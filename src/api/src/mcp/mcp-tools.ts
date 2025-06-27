@@ -22,7 +22,7 @@ export type McpServerDefinition = {
 };
 
 function client(config: LlamaIndexMCPClientOptions): MCPSSEClient | MCPHTTPClient {
-  console.log(`Initializing MCP client for ${name}`);
+  console.log(`Initializing MCP client`);
   console.log(`Using configuration:`, {config});
 
   if (config.type === "sse") {
