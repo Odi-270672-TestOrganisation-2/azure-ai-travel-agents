@@ -1,3 +1,5 @@
+name: Template Validation Sample Workflow
+
 # Run when commits are pushed to main
 on:
   workflow_dispatch:
@@ -10,9 +12,9 @@ on:
 # Set up permissions for deploying with secretless Azure federated credentials
 # https://learn.microsoft.com/en-us/azure/developer/github/connect-from-azure?tabs=azure-portal%2Clinux#set-up-azure-login-with-openid-connect-authentication
 permissions:
-  id-token: write
   contents: read
-
+  id-token: write
+  pull-requests: write
 
 jobs:
   build:
@@ -43,60 +45,22 @@ jobs:
             --tenant-id "$Env:AZURE_TENANT_ID"
         shell: pwsh
 
+      - uses: microsoft/template-validation-action@Latest
+        id: validation
+        env:
+          AZURE_CLIENT_ID: ${{ vars.AZURE_CLIENT_ID }}
+          AZURE_TENANT_ID: ${{ vars.AZURE_TENANT_ID }}
+          AZURE_SUBSCRIPTION_ID: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+          AZURE_ENV_NAME: ${{ vars.AZURE_ENV_NAME }}
+          AZURE_LOCATION: ${{ vars.AZURE_LOCATION }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: print result
+        run: cat ${{ steps.validation.outputs.resultFile }}
 
       - name: Provision Infrastructure
         run: azd provision --no-prompt
-        env:
-          VAR: ${{ secrets.VAR }}
-          VAR: ${{ secrets.VAR }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR: ${{ secrets.VAR }}
-          VAR: ${{ secrets.VAR }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR: ${{ secrets.VAR }}
-          VAR: ${{ secrets.VAR }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR: ${{ secrets.VAR }}
-          VAR: ${{ secrets.VAR }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR: ${{ secrets.VAR }}
-          VAR: ${{ secrets.VAR }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR: ${{ secrets.VAR }}
-          VAR: ${{ secrets.VAR }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR_S: ${{ secrets.VAR_S }}
 
       - name: Deploy Application
         run: azd deploy --no-prompt
-        env:
-          VAR: ${{ secrets.VAR }}
-          VAR: ${{ secrets.VAR }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR: ${{ secrets.VAR }}
-          VAR: ${{ secrets.VAR }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR: ${{ secrets.VAR }}
-          VAR: ${{ secrets.VAR }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR: ${{ secrets.VAR }}
-          VAR: ${{ secrets.VAR }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR: ${{ secrets.VAR }}
-          VAR: ${{ secrets.VAR }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR: ${{ secrets.VAR }}
-          VAR: ${{ secrets.VAR }}
-          VAR_S: ${{ secrets.VAR_S }}
-          VAR_S: ${{ secrets.VAR_S }}
         
