@@ -4,7 +4,7 @@
 
 # Azure AI Travel Agents with Llamaindex.TS and MCP
 
-[![Join Azure AI Foundry Community Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=flat-square&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Join Azure AI Foundry Community Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=flat-square&logo=discord&color=5865f2&logoColor=fff)](https://discord.gg/NcwHpz6bRW)
 [![Join Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=flat-square&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 [![Announcement blog post](https://img.shields.io/badge/Announcement%20Blog%20post-black?style=flat-square)](https://techcommunity.microsoft.com/blog/AzureDevCommunityBlog/introducing-azure-ai-travel-agents-a-flagship-mcp-powered-sample-for-ai-travel-s/4416683)
 <br>
@@ -173,7 +173,7 @@ We welcome contributions to the AI Travel Agents project! If you have suggestion
 
 We encourage you to join our Azure AI Foundry Developer Community​ to share your experiences, ask questions, and get support:
 
-- [aka.ms/foundry/discord​](https://aka.ms/foundry/discord) - Join our Discord community for real-time discussions and support.
+- [aka.ms/foundry/discord​](https://discord.gg/NcwHpz6bRW) - Join our Discord community for real-time discussions and support.
 - [aka.ms/foundry/forum](https://aka.ms/foundry/forum) - Visit our Azure AI Foundry Developer Forum to ask questions and share your knowledge.
 
 <div align="center">
